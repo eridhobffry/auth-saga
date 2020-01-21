@@ -5,14 +5,14 @@ const ProfileArea = props => {
   return (
     <div>
       <h1>Profile for {props.username}</h1>
-      <h3>Your pass: {props.email}</h3>
+      <h3>Your pass: {props.password}</h3>
     </div>
   );
 };
 
 ProfileArea.PropTypes = {
   username: PropTypes.string.isRequired,
-  email: PropTypes.string
+  password: PropTypes.string
 };
 
 export default ProfileArea;
