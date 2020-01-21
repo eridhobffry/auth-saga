@@ -11,7 +11,8 @@ const ProfileArea = props => {
 };
 
 ProfileArea.PropTypes = {
-  username: PropTypes.string.isRequired
+  username: PropTypes.string.isRequired,
+  email: PropTypes.string
 };
 
 export default ProfileArea;
