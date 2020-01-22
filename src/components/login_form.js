@@ -40,7 +40,7 @@ const LoginForm = props => {
   );
 };
 
-loginForm.PropTypes = {
+LoginForm.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
   isSubmitting: PropTypes.func.isRequired

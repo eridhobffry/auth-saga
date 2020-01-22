@@ -1,6 +1,6 @@
 import * as api from "../connectivity/api.auth";
-import { call, put } from "redux-saga/effects";
-import { takeLatest } from "redux-saga";
+import { call, put, takeLatest } from "redux-saga/effects";
+
 import jwtDecode from "jwt-decode";
 import { push } from "react-router-redux";
 import * as types from "../constants/actionTypes";

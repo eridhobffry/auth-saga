@@ -10,7 +10,7 @@ const ProfileArea = props => {
   );
 };
 
-ProfileArea.PropTypes = {
+ProfileArea.propTypes = {
   username: PropTypes.string.isRequired,
   password: PropTypes.string
 };

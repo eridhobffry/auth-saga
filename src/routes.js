@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, IndexRoute } from "react-router";
+import { Route } from "react-router";
 import { routerActions } from "react-router-redux";
 import { UserAuthWrapper } from "redux-auth-wrapper";
 import App from "./components/App";
@@ -19,7 +19,7 @@ const UserIsAuthenticated = UserAuthWrapper({
 
 export default (
   <Route path="/" component={App}>
-    <IndexRoute component={HomePage} />
+    <Route exact component={HomePage} />
     <Route path="login" component={login_page} />
     <Route path="logout" component={logout_page} />
     <Route path="profile" component={UserIsAuthenticated(profile_page)} />

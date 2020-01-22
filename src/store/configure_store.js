@@ -3,6 +3,7 @@ import createLogger from "redux-logger";
 import { routerMiddleware } from "react-router-redux";
 import { loadState, saveState } from "../connectivity/local_storage";
 import { browserHistory } from "react-router";
+import { createBrowserHistory } from "history";
 import createSagaMiddleware, { END } from "redux-saga";
 import reduxImmutableStateInvariant from "redux-immutable-state-invariant";
 import rootReducers from "../reducers";
@@ -11,7 +12,7 @@ import _ from "lodash";
 
 const persistedState = loadState();
 
-const routerMw = routerMiddleware(browserHistory);
+const routerMw = routerMiddleware(createBrowserHistory);
 const loggerMiddleware = createLogger();
 const sagaMiddleware = createSagaMiddleware();
 
@@ -38,7 +39,7 @@ function configureStoreProd() {
   return store;
 }
 
-function configureSToreDev() {
+function configureStoreDev() {
   const middlewares = [
     reduxImmutableStateInvariant(),
     routerMw,
@@ -49,7 +50,7 @@ function configureSToreDev() {
   const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // add support for Redux dev tools
   const store = createStore(
-    rootReducer,
+    rootReducers,
     persistedState,
     composeEnhancers(applyMiddleware(...middlewares))
   );
@@ -68,7 +69,7 @@ function configureSToreDev() {
       store.replaceReducer(nextReducer);
     });
   }
-  sagaMiddleware.run(sagas);
+  sagaMiddleware.run(rootSagas);
   store.close = () => store.dispatch(END);
 
   return store;
