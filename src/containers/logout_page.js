@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import * as types from "../constants/actionTypes";
 
@@ -15,7 +16,7 @@ class LogoutPage extends Component {
 }
 
 LogoutPage.propTypes = {
-  dispatch: React.PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired
 };
 
 export default connect()(LogoutPage);

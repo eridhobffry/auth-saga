@@ -9,7 +9,7 @@ let initialState = {
   token: null
 };
 
-export default function auth(state = initialState, abction) {
+export default function auth(state = initialState, action) {
   switch (action.type) {
     case types.LOGIN__COMPLETED: {
       const { username, password, token } = action.payload;

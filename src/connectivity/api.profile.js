@@ -1,5 +1,5 @@
-import asyncFetch from "./async-fetch";
-import { getBaseRequestConfig } from "./baseRequestConfig";
+import asyncFetch from "./async_fetch";
+import { getBaseRequestConfig } from "./base_request_config";
 
 export async function fetchProfile(userId) {
   /* global API_BASE_URL */
